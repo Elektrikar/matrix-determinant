@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -std=c11 -Wall -Werror -g
+CFLAGS = -std=c23 -Wall -Werror -g
 TARGET = main
 
 all: $(TARGET)
