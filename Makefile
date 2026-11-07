@@ -8,7 +8,7 @@ $(TARGET): main.c
 	$(CC) $(CFLAGS) -o $(TARGET) main.c
 
 test: $(TARGET)
-	./$(TARGET)
+	./$(TARGET) < input.txt
 
 clean:
 	rm -f $(TARGET)
