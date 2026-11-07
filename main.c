@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define EPSILON 1e-9 // tolerance of floating-point comparisons
+
 double fabs(double x) {
     return x < 0 ? -x : x;
 }
@@ -27,10 +29,10 @@ double det(int n, double matrix[n][n]) {
     int sign = 1;
 
     for (int i = 0; i < n - 1; i++) {
-        if (fabs(matrix[i][i]) < 1e-9) {
+        if (fabs(matrix[i][i]) < EPSILON) {
             bool swapped = false;
             for (int j = i + 1; j < n; j++) {
-                if (fabs(matrix[j][i]) > 1e-9) {
+                if (fabs(matrix[j][i]) > EPSILON) {
                     swap_rows(n, matrix, i, j);
                     sign = -sign;
                     swapped = true;
@@ -42,7 +44,7 @@ double det(int n, double matrix[n][n]) {
         }
         
         for (int j = i + 1; j < n; j++) {
-            if (fabs(matrix[j][i]) < 1e-9) continue;
+            if (fabs(matrix[j][i]) < EPSILON) continue;
 
             double factor = matrix[j][i] / matrix[i][i];
 
