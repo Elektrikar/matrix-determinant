@@ -7,7 +7,7 @@ double fabs(double x) {
 void print_matrix(int n, double matrix[n][n]) {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            printf("%5lf ", matrix[i][j]);
+            printf("%9g ", matrix[i][j]);
         }
         putchar('\n');
     }
@@ -67,7 +67,7 @@ int main () {
         scanf("%lf", &matrix[i / n][i % n]);
     }
 
-    printf("\n|A| = %lf\n\n", det(n, matrix));
+    printf("\n|A| = %g\n\n", det(n, matrix));
     print_matrix(n, matrix);
 
     return 0;
